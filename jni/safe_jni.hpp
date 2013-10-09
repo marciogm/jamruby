@@ -99,9 +99,6 @@ public:
 	safe_local_ref(JNIEnv *env, T obj)
 		: env_(env), ref_(obj) {
 	}
-	~safe_local_ref() {
-		env_->DeleteLocalRef(ref_);
-	}
 	T get() const {
 		return ref_;
 	}
